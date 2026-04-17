@@ -1,12 +1,11 @@
 package store
 
 import (
+	"amr-dispatcher-lab/internal/domain"
 	"database/sql"
 	"encoding/json"
 	"fmt"
 	"time"
-
-	"amr-disp/internal/domain"
 )
 
 func (s *SQLiteStore) GetRun(id string) (domain.Run, error) {

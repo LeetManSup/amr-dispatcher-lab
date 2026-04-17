@@ -1,12 +1,11 @@
 package assets
 
 import (
+	"amr-dispatcher-lab/internal/domain"
 	"encoding/json"
 	"os"
 	"path/filepath"
 	"strings"
-
-	"amr-disp/internal/domain"
 )
 
 type FilesystemAssets struct {

@@ -1,0 +1,66 @@
+<section class="panel-stack">
+  <section class="panel panel--split">
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Create</span>
+          <h2 class="panel__title">New run</h2>
+        </div>
+      </div>
+      <form id="createRunForm" class="form-grid">
+        <label class="field">
+          <span class="field__label">Algorithm</span>
+          <select id="algorithmInput" class="field__control">
+            <option value="fifo">FIFO</option>
+            <option value="priority">Priority</option>
+            <option value="adaptive">Adaptive</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field__label">Map</span>
+          <select id="mapPathInput" class="field__control"></select>
+        </label>
+        <label class="field">
+          <span class="field__label">Scenario</span>
+          <select id="scenarioPathInput" class="field__control"></select>
+        </label>
+        <label class="field">
+          <span class="field__label">Seed</span>
+          <input id="seedInput" class="field__control" type="number" placeholder="0 = auto">
+        </label>
+        <div class="form-actions">
+          <button class="button button--primary" type="submit">Create run</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Catalog</span>
+          <h2 class="panel__title">Available fixtures</h2>
+        </div>
+      </div>
+      <div class="stack-list">
+        <div>
+          <h3 class="list-heading">Maps</h3>
+          <div id="mapCatalogList"></div>
+        </div>
+        <div>
+          <h3 class="list-heading">Scenarios</h3>
+          <div id="scenarioCatalogList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel__header">
+      <div>
+        <span class="panel__eyebrow">History</span>
+        <h2 class="panel__title">Runs</h2>
+      </div>
+    </div>
+    <div id="runsTable"></div>
+  </section>
+</section>

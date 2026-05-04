@@ -1,0 +1,37 @@
+{
+  "name": "Overload",
+  "description": "Сценарий перегрузки маршрутов и зоны назначения.",
+  "robots": [
+    { "robotId": "R1", "robotModel": "AMR-Lite", "startPoint": "A1", "batteryLevel": 100 },
+    { "robotId": "R2", "robotModel": "AMR-Lite", "startPoint": "A2", "batteryLevel": 100 }
+  ],
+  "requests": [
+    { "requestId": "OV-1", "releaseTick": 0, "sourcePoint": "A1", "targetPoint": "C1", "businessType": "inbound", "priority": 5, "deadline": 8 },
+    { "requestId": "OV-2", "releaseTick": 0, "sourcePoint": "A2", "targetPoint": "C1", "businessType": "inbound", "priority": 7, "deadline": 7 },
+    { "requestId": "OV-3", "releaseTick": 1, "sourcePoint": "A3", "targetPoint": "C1", "businessType": "line_feed", "priority": 8, "deadline": 6 },
+    { "requestId": "OV-4", "releaseTick": 2, "sourcePoint": "B1", "targetPoint": "C1", "businessType": "return", "priority": 6, "deadline": 9 },
+    { "requestId": "OV-5", "releaseTick": 2, "sourcePoint": "B2", "targetPoint": "C1", "businessType": "return", "priority": 4, "deadline": 10 }
+  ],
+  "faultProbability": 0.01,
+  "chargingProbability": 0.0,
+  "lowBatteryThreshold": 20,
+  "chargeRecoveryPerTick": 10,
+  "batteryDrainPerTick": 4,
+  "maxTicks": 18,
+  "admission": {
+    "maxActiveTasks": 2,
+    "maxRouteLoad": 1.5,
+    "maxZoneLoad": 2,
+    "taskTimeoutTicks": 12,
+    "stallThresholdTicks": 4
+  },
+  "weights": {
+    "alpha": 0.6,
+    "beta": 0.4,
+    "w1": 0.3,
+    "w2": 0.3,
+    "w3": 0.2,
+    "w4": 0.15,
+    "w5": 0.05
+  }
+}

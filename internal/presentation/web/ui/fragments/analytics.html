@@ -1,0 +1,78 @@
+<section class="panel-stack">
+  <section class="panel">
+    <div class="panel__header">
+      <div>
+        <span class="panel__eyebrow">KPIs</span>
+        <h2 class="panel__title">Metrics over time</h2>
+        <p class="panel__note">Observed wait includes tasks still queued, not only completed ones.</p>
+      </div>
+    </div>
+    <div id="analyticsCharts" class="chart-grid chart-grid--analytics"></div>
+  </section>
+
+  <section class="panel panel--split">
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Comparison</span>
+          <h3 class="panel__title">Scenario comparison</h3>
+          <p class="panel__note">Compare runs with the same map and scenario as the selected experiment.</p>
+        </div>
+      </div>
+      <div id="comparisonChart"></div>
+    </div>
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Benchmark focus</span>
+          <h3 class="panel__title">Leaders and trade-offs</h3>
+        </div>
+      </div>
+      <div id="comparisonHighlights" class="metric-grid"></div>
+    </div>
+  </section>
+
+  <section class="panel panel--split">
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Latency tail</span>
+          <h3 class="panel__title">Observed wait P95 by algorithm</h3>
+          <p class="panel__note">Tail latency shows how long the slowest queued tasks keep waiting under each policy.</p>
+        </div>
+      </div>
+      <div id="waitP95Chart"></div>
+    </div>
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Admission</span>
+          <h3 class="panel__title">Admission rejects by reason</h3>
+          <p class="panel__note">Helps explain whether a policy is blocked by robot scarcity, active limits, or traffic constraints.</p>
+        </div>
+      </div>
+      <div id="rejectReasonChart"></div>
+    </div>
+  </section>
+
+  <section class="panel panel--split">
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Runs</span>
+          <h3 class="panel__title">Benchmark table</h3>
+        </div>
+      </div>
+      <div id="comparisonTable"></div>
+    </div>
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">History</span>
+          <h3 class="panel__title">Metric table</h3>
+        </div>
+      </div>
+      <div id="analyticsMetricsTable"></div>
+    </div>
+  </section>
+</section>

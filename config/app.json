@@ -1,0 +1,8 @@
+{
+  "httpPort": 8080,
+  "sqlitePath": "data/amr-disp.db",
+  "defaultMapPath": "fixtures/maps/factory-small.json",
+  "defaultScenarioPath": "fixtures/scenarios/baseline.json",
+  "tickDurationMillis": 350,
+  "logLevel": "debug"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Fault Heavy",
+  "description": "Сценарий с повышенной вероятностью fault и перезапуска задач.",
+  "robots": [
+    { "robotId": "R1", "robotModel": "AMR-Pro", "startPoint": "P1", "batteryLevel": 100 },
+    { "robotId": "R2", "robotModel": "AMR-Pro", "startPoint": "P6", "batteryLevel": 100 }
+  ],
+  "requests": [
+    { "requestId": "FH-1", "releaseTick": 0, "sourcePoint": "P1", "targetPoint": "P4", "businessType": "critical", "priority": 9, "deadline": 7 },
+    { "requestId": "FH-2", "releaseTick": 2, "sourcePoint": "P2", "targetPoint": "P6", "businessType": "line_feed", "priority": 8, "deadline": 9 },
+    { "requestId": "FH-3", "releaseTick": 4, "sourcePoint": "P5", "targetPoint": "P3", "businessType": "return", "priority": 6, "deadline": 11 }
+  ],
+  "faultProbability": 0.18,
+  "chargingProbability": 0.02,
+  "lowBatteryThreshold": 22,
+  "chargeRecoveryPerTick": 10,
+  "batteryDrainPerTick": 5,
+  "maxTicks": 20,
+  "admission": {
+    "maxActiveTasks": 2,
+    "maxRouteLoad": 2,
+    "maxZoneLoad": 2,
+    "taskTimeoutTicks": 10,
+    "stallThresholdTicks": 3
+  },
+  "weights": {
+    "alpha": 0.6,
+    "beta": 0.4,
+    "w1": 0.32,
+    "w2": 0.3,
+    "w3": 0.14,
+    "w4": 0.08,
+    "w5": 0.16
+  }
+}

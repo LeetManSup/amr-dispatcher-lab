@@ -1,0 +1,43 @@
+<section class="panel-stack">
+  <section class="panel">
+    <div class="panel__header">
+      <div>
+        <span class="panel__eyebrow">Topology</span>
+        <h2 class="panel__title">Map and traffic overlays</h2>
+        <p class="panel__note">Drag to pan the map, use the mouse wheel to zoom, and reset the viewport when needed.</p>
+      </div>
+      <div class="map-panel-tools">
+        <div class="legend" id="mapLegend"></div>
+        <div class="map-toolbar" aria-label="Map controls">
+          <button id="mapZoomIn" class="button button--ghost button--small" type="button">+</button>
+          <button id="mapZoomOut" class="button button--ghost button--small" type="button">-</button>
+          <button id="mapReset" class="button button--ghost button--small" type="button">Reset view</button>
+        </div>
+      </div>
+    </div>
+    <div class="map-shell" id="mapShell">
+      <svg id="mapCanvas" class="map-canvas" viewBox="0 0 1000 700" aria-label="Map"></svg>
+    </div>
+  </section>
+
+  <section class="panel panel--split">
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Routes</span>
+          <h3 class="panel__title">Active paths</h3>
+        </div>
+      </div>
+      <div id="activePathsTable"></div>
+    </div>
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Segments</span>
+          <h3 class="panel__title">Load table</h3>
+        </div>
+      </div>
+      <div id="segmentLoadTable"></div>
+    </div>
+  </section>
+</section>

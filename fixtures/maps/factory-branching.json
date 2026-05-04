@@ -1,0 +1,20 @@
+{
+  "name": "Factory Branching",
+  "points": [
+    { "pointId": "A1", "pointType": "running_area", "x": 60, "y": 80, "areaId": "A" },
+    { "pointId": "A2", "pointType": "queue_area", "x": 160, "y": 60, "areaId": "A" },
+    { "pointId": "A3", "pointType": "queue_area", "x": 160, "y": 140, "areaId": "A" },
+    { "pointId": "B1", "pointType": "workbench", "x": 280, "y": 60, "areaId": "B" },
+    { "pointId": "B2", "pointType": "shelf_area", "x": 280, "y": 140, "areaId": "B" },
+    { "pointId": "C1", "pointType": "charging_area", "x": 420, "y": 100, "areaId": "C" }
+  ],
+  "segments": [
+    { "segmentId": "T1", "fromPoint": "A1", "toPoint": "A2", "length": 6, "direction": "bidirectional", "speedLimit": 1.1, "routeCostWeight": 1.0, "segmentType": "main" },
+    { "segmentId": "T2", "fromPoint": "A1", "toPoint": "A3", "length": 6, "direction": "bidirectional", "speedLimit": 1.1, "routeCostWeight": 1.0, "segmentType": "main" },
+    { "segmentId": "T3", "fromPoint": "A2", "toPoint": "B1", "length": 10, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.4, "segmentType": "narrow" },
+    { "segmentId": "T4", "fromPoint": "A3", "toPoint": "B2", "length": 10, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.0, "segmentType": "main" },
+    { "segmentId": "T5", "fromPoint": "B1", "toPoint": "C1", "length": 8, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.0, "segmentType": "service" },
+    { "segmentId": "T6", "fromPoint": "B2", "toPoint": "C1", "length": 8, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.0, "segmentType": "service" },
+    { "segmentId": "T7", "fromPoint": "B1", "toPoint": "B2", "length": 7, "direction": "forward", "speedLimit": 0.7, "routeCostWeight": 1.5, "segmentType": "one_way" }
+  ]
+}

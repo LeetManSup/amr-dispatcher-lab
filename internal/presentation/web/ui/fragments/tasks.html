@@ -1,0 +1,51 @@
+<section class="panel-stack">
+  <section class="panel">
+    <div class="panel__header">
+      <div>
+        <span class="panel__eyebrow">Queue</span>
+        <h2 class="panel__title">Tasks</h2>
+        <p class="panel__note">Phase shows whether a task is waiting for pickup, heading to pickup, or heading to dropoff.</p>
+      </div>
+      <div class="filter-row">
+        <label class="field field--compact">
+          <span class="field__label">Status</span>
+          <select id="taskStatusFilter" class="field__control">
+            <option value="">All</option>
+            <option value="queued">Queued</option>
+            <option value="assigned">Assigned</option>
+            <option value="in_progress">In progress</option>
+            <option value="paused">Paused</option>
+            <option value="failed">Failed</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </label>
+        <label class="field field--compact">
+          <span class="field__label">Robot</span>
+          <input id="taskRobotFilter" class="field__control" type="text" placeholder="robot id">
+        </label>
+      </div>
+    </div>
+    <div id="tasksTable"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel__header">
+      <div>
+        <span class="panel__eyebrow">ICS</span>
+        <h2 class="panel__title">Manual task intake</h2>
+      </div>
+    </div>
+    <form id="addTaskForm" class="form-grid form-grid--dense">
+      <label class="field"><span class="field__label">Request ID</span><input id="icsRequestId" class="field__control" type="text" value="manual-1"></label>
+      <label class="field"><span class="field__label">Source point</span><input id="icsSourcePoint" class="field__control" type="text" value="P1"></label>
+      <label class="field"><span class="field__label">Target point</span><input id="icsTargetPoint" class="field__control" type="text" value="P4"></label>
+      <label class="field"><span class="field__label">Business type</span><input id="icsBusinessType" class="field__control" type="text" value="manual"></label>
+      <label class="field"><span class="field__label">Priority</span><input id="icsPriority" class="field__control" type="number" value="9"></label>
+      <label class="field"><span class="field__label">Deadline</span><input id="icsDeadline" class="field__control" type="number" value="12"></label>
+      <div class="form-actions">
+        <button class="button button--primary" type="submit">Add task</button>
+      </div>
+    </form>
+  </section>
+</section>

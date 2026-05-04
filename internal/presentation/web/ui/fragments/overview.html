@@ -1,0 +1,55 @@
+<section class="panel-stack">
+  <section class="panel">
+    <div class="panel__header">
+      <div>
+        <span class="panel__eyebrow">Run Overview</span>
+        <h2 class="panel__title">Current experiment</h2>
+      </div>
+      <span id="overviewModeBadge" class="badge badge--neutral">Mode --</span>
+    </div>
+    <div id="overviewHero" class="overview-hero"></div>
+  </section>
+
+  <section class="panel panel--split">
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Metrics</span>
+          <h3 class="panel__title">Quick KPIs</h3>
+          <p class="panel__note">Observed wait is queue-aware and includes work that has not started yet.</p>
+        </div>
+      </div>
+      <div id="overviewMetricsGrid" class="metric-grid"></div>
+    </div>
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Alerts</span>
+          <h3 class="panel__title">System signals</h3>
+        </div>
+      </div>
+      <div id="overviewAlerts" class="empty-state">No alerts yet.</div>
+    </div>
+  </section>
+
+  <section class="panel panel--split">
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Decisions</span>
+          <h3 class="panel__title">Recent scheduler actions</h3>
+        </div>
+      </div>
+      <div id="overviewDecisions"></div>
+    </div>
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <span class="panel__eyebrow">Activity</span>
+          <h3 class="panel__title">Live event feed</h3>
+        </div>
+      </div>
+      <div id="overviewEventFeed" class="event-feed empty-state">Waiting for events.</div>
+    </div>
+  </section>
+</section>

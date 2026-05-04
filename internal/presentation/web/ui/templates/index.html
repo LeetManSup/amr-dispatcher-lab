@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }}</title>
+  <meta name="description" content="{{ .Description }}">
+  <link rel="stylesheet" href="/ui/static/css/app.css">
+</head>
+<body>
+  <div id="app-shell" class="app-shell">
+    <header class="topbar">
+      <div class="topbar__brand">
+        <div class="brand-lockup">
+          <span class="brand-lockup__eyebrow">Industrial Operations Lab</span>
+          <h1 class="brand-lockup__title">{{ .AppName }}</h1>
+        </div>
+        <p class="topbar__description">{{ .Description }}</p>
+      </div>
+      <div class="topbar__status">
+        <span id="healthBadge" class="badge badge--neutral">Health: unknown</span>
+        <span id="runStatusBadge" class="badge badge--neutral">No run selected</span>
+        <span id="runTickBadge" class="badge badge--neutral">Tick --</span>
+      </div>
+      <div class="topbar__controls">
+        <label class="field field--inline">
+          <span class="field__label">Current run</span>
+          <select id="runSelector" class="field__control"></select>
+        </label>
+        <div class="toolbar-actions">
+          <button id="stepRunButton" class="button button--primary">Step</button>
+          <button id="startRunButton" class="button button--success">Start</button>
+          <button id="stopRunButton" class="button button--danger">Stop</button>
+          <select id="exportFormatSelect" class="field__control">
+            <option value="json">JSON</option>
+            <option value="csv">CSV</option>
+          </select>
+          <button id="exportRunButton" class="button button--ghost">Export</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="workspace-shell">
+      <aside class="sidebar">
+        <nav id="tabNav" class="tab-nav" aria-label="Primary"></nav>
+      </aside>
+
+      <main class="workspace">
+        <div id="workspaceHeader" class="workspace__header"></div>
+        <section id="workspaceContent" class="workspace__content" aria-live="polite"></section>
+      </main>
+
+      <aside id="inspectorPane" class="inspector">
+        <div class="inspector__header">
+          <h2>Inspector</h2>
+          <button id="inspectorCloseButton" class="button button--ghost button--small inspector__close" type="button">Close</button>
+        </div>
+        <div id="inspectorContent" class="inspector__content"></div>
+      </aside>
+    </div>
+  </div>
+
+  <script id="ui-config" type="application/json">{{ .ConfigJSON }}</script>
+  <script type="module" src="/ui/static/js/main.js"></script>
+</body>
+</html>

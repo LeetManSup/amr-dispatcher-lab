@@ -1,0 +1,60 @@
+{
+  "name": "Factory Large Mesh",
+  "points": [
+    { "pointId": "IN1", "pointType": "running_area", "x": 60, "y": 130, "areaId": "INBOUND" },
+    { "pointId": "IN2", "pointType": "queue_area", "x": 60, "y": 230, "areaId": "INBOUND" },
+
+    { "pointId": "H1", "pointType": "running_area", "x": 180, "y": 180, "areaId": "HUB" },
+    { "pointId": "H2", "pointType": "running_area", "x": 300, "y": 180, "areaId": "HUB" },
+    { "pointId": "H3", "pointType": "running_area", "x": 420, "y": 180, "areaId": "HUB" },
+    { "pointId": "H4", "pointType": "running_area", "x": 540, "y": 180, "areaId": "HUB" },
+    { "pointId": "H5", "pointType": "running_area", "x": 660, "y": 180, "areaId": "HUB" },
+
+    { "pointId": "A1", "pointType": "workbench", "x": 300, "y": 80, "areaId": "PROD_A" },
+    { "pointId": "A2", "pointType": "workbench", "x": 420, "y": 80, "areaId": "PROD_A" },
+    { "pointId": "A3", "pointType": "shelf_area", "x": 540, "y": 80, "areaId": "PROD_A" },
+
+    { "pointId": "B1", "pointType": "workbench", "x": 420, "y": 300, "areaId": "PROD_B" },
+    { "pointId": "B2", "pointType": "shelf_area", "x": 540, "y": 300, "areaId": "PROD_B" },
+    { "pointId": "B3", "pointType": "shelf_area", "x": 660, "y": 300, "areaId": "PROD_B" },
+
+    { "pointId": "W1", "pointType": "queue_area", "x": 780, "y": 180, "areaId": "WAREHOUSE" },
+    { "pointId": "W2", "pointType": "shelf_area", "x": 900, "y": 180, "areaId": "WAREHOUSE" },
+    { "pointId": "W3", "pointType": "shelf_area", "x": 1020, "y": 180, "areaId": "WAREHOUSE" },
+
+    { "pointId": "X1", "pointType": "running_area", "x": 300, "y": 350, "areaId": "BYPASS" },
+    { "pointId": "X2", "pointType": "running_area", "x": 660, "y": 350, "areaId": "BYPASS" },
+
+    { "pointId": "CH1", "pointType": "charging_area", "x": 180, "y": 320, "areaId": "UTIL" },
+    { "pointId": "MT1", "pointType": "maintenance_area", "x": 780, "y": 60, "areaId": "UTIL" }
+  ],
+  "segments": [
+    { "segmentId": "L1", "fromPoint": "IN1", "toPoint": "H1", "length": 9, "direction": "bidirectional", "speedLimit": 1.1, "routeCostWeight": 1.0, "segmentType": "main" },
+    { "segmentId": "L2", "fromPoint": "IN2", "toPoint": "H1", "length": 9, "direction": "bidirectional", "speedLimit": 1.1, "routeCostWeight": 1.0, "segmentType": "main" },
+    { "segmentId": "L3", "fromPoint": "H1", "toPoint": "H2", "length": 8, "direction": "bidirectional", "speedLimit": 1.2, "routeCostWeight": 1.0, "segmentType": "main" },
+    { "segmentId": "L4", "fromPoint": "H2", "toPoint": "H3", "length": 8, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.1, "segmentType": "main" },
+    { "segmentId": "L5", "fromPoint": "H3", "toPoint": "H4", "length": 8, "direction": "bidirectional", "speedLimit": 0.9, "routeCostWeight": 1.3, "segmentType": "narrow" },
+    { "segmentId": "L6", "fromPoint": "H4", "toPoint": "H5", "length": 8, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.1, "segmentType": "main" },
+
+    { "segmentId": "L7", "fromPoint": "H2", "toPoint": "A1", "length": 11, "direction": "bidirectional", "speedLimit": 0.8, "routeCostWeight": 1.5, "segmentType": "narrow" },
+    { "segmentId": "L8", "fromPoint": "A1", "toPoint": "A2", "length": 10, "direction": "bidirectional", "speedLimit": 0.9, "routeCostWeight": 1.2, "segmentType": "main" },
+    { "segmentId": "L9", "fromPoint": "A2", "toPoint": "A3", "length": 10, "direction": "bidirectional", "speedLimit": 0.8, "routeCostWeight": 1.4, "segmentType": "narrow" },
+
+    { "segmentId": "L10", "fromPoint": "H3", "toPoint": "B1", "length": 11, "direction": "bidirectional", "speedLimit": 0.9, "routeCostWeight": 1.2, "segmentType": "narrow" },
+    { "segmentId": "L11", "fromPoint": "B1", "toPoint": "B2", "length": 9, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.0, "segmentType": "main" },
+    { "segmentId": "L12", "fromPoint": "B2", "toPoint": "B3", "length": 9, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.0, "segmentType": "main" },
+
+    { "segmentId": "L13", "fromPoint": "H5", "toPoint": "W1", "length": 7, "direction": "bidirectional", "speedLimit": 1.2, "routeCostWeight": 1.0, "segmentType": "main" },
+    { "segmentId": "L14", "fromPoint": "W1", "toPoint": "W2", "length": 8, "direction": "bidirectional", "speedLimit": 1.1, "routeCostWeight": 1.0, "segmentType": "main" },
+    { "segmentId": "L15", "fromPoint": "W2", "toPoint": "W3", "length": 8, "direction": "bidirectional", "speedLimit": 1.1, "routeCostWeight": 1.0, "segmentType": "main" },
+
+    { "segmentId": "L16", "fromPoint": "H2", "toPoint": "X1", "length": 12, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.0, "segmentType": "service" },
+    { "segmentId": "L17", "fromPoint": "X1", "toPoint": "X2", "length": 20, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 0.9, "segmentType": "service" },
+    { "segmentId": "L18", "fromPoint": "X2", "toPoint": "W1", "length": 12, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 0.9, "segmentType": "service" },
+    { "segmentId": "L19", "fromPoint": "X2", "toPoint": "B2", "length": 9, "direction": "bidirectional", "speedLimit": 0.9, "routeCostWeight": 1.0, "segmentType": "service" },
+
+    { "segmentId": "L20", "fromPoint": "H1", "toPoint": "CH1", "length": 10, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.0, "segmentType": "service" },
+    { "segmentId": "L21", "fromPoint": "H5", "toPoint": "MT1", "length": 11, "direction": "bidirectional", "speedLimit": 0.8, "routeCostWeight": 1.2, "segmentType": "service" },
+    { "segmentId": "L22", "fromPoint": "A2", "toPoint": "B1", "length": 13, "direction": "forward", "speedLimit": 0.7, "routeCostWeight": 1.6, "segmentType": "one_way" }
+  ]
+}

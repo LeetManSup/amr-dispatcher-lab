@@ -1,0 +1,71 @@
+{
+  "name": "Full Campus Benchmark",
+  "description": "Large benchmark with simultaneous production, warehouse and return flows intended to separate FIFO, Priority and Adaptive dispatching.",
+  "robots": [
+    { "robotId": "R1", "robotModel": "AMR-Pro", "startPoint": "IN1", "batteryLevel": 100 },
+    { "robotId": "R2", "robotModel": "AMR-Pro", "startPoint": "IN2", "batteryLevel": 100 },
+    { "robotId": "R3", "robotModel": "AMR-Lite", "startPoint": "S3", "batteryLevel": 100 },
+    { "robotId": "R4", "robotModel": "AMR-Lite", "startPoint": "S6", "batteryLevel": 100 },
+    { "robotId": "R5", "robotModel": "AMR-Lite", "startPoint": "W1", "batteryLevel": 100 },
+    { "robotId": "R6", "robotModel": "AMR-Lite", "startPoint": "CH1", "batteryLevel": 100 }
+  ],
+  "requests": [
+    { "requestId": "FC-01", "releaseTick": 0, "sourcePoint": "IN1", "targetPoint": "A4", "businessType": "backlog_low", "priority": 2, "deadline": 22 },
+    { "requestId": "FC-02", "releaseTick": 0, "sourcePoint": "IN2", "targetPoint": "A3", "businessType": "critical_feed", "priority": 10, "deadline": 9 },
+    { "requestId": "FC-03", "releaseTick": 0, "sourcePoint": "IN3", "targetPoint": "W5", "businessType": "warehouse_fill", "priority": 7, "deadline": 12 },
+    { "requestId": "FC-04", "releaseTick": 0, "sourcePoint": "S3", "targetPoint": "B4", "businessType": "line_feed", "priority": 6, "deadline": 13 },
+
+    { "requestId": "FC-05", "releaseTick": 1, "sourcePoint": "S2", "targetPoint": "A2", "businessType": "critical_feed", "priority": 9, "deadline": 10 },
+    { "requestId": "FC-06", "releaseTick": 1, "sourcePoint": "S5", "targetPoint": "W3", "businessType": "warehouse_fill", "priority": 5, "deadline": 15 },
+
+    { "requestId": "FC-07", "releaseTick": 2, "sourcePoint": "S1", "targetPoint": "A4", "businessType": "critical_feed", "priority": 10, "deadline": 11 },
+    { "requestId": "FC-08", "releaseTick": 2, "sourcePoint": "S4", "targetPoint": "B2", "businessType": "line_feed", "priority": 7, "deadline": 14 },
+    { "requestId": "FC-09", "releaseTick": 2, "sourcePoint": "W1", "targetPoint": "CH2", "businessType": "return_cycle", "priority": 3, "deadline": 24 },
+
+    { "requestId": "FC-10", "releaseTick": 3, "sourcePoint": "IN2", "targetPoint": "A3", "businessType": "critical_feed", "priority": 9, "deadline": 12 },
+    { "requestId": "FC-11", "releaseTick": 3, "sourcePoint": "S6", "targetPoint": "W4", "businessType": "warehouse_fill", "priority": 6, "deadline": 15 },
+    { "requestId": "FC-12", "releaseTick": 3, "sourcePoint": "S6", "targetPoint": "B3", "businessType": "line_feed", "priority": 6, "deadline": 16 },
+
+    { "requestId": "FC-13", "releaseTick": 4, "sourcePoint": "S2", "targetPoint": "A4", "businessType": "critical_feed", "priority": 10, "deadline": 13 },
+    { "requestId": "FC-14", "releaseTick": 4, "sourcePoint": "S7", "targetPoint": "MT1", "businessType": "maintenance_return", "priority": 2, "deadline": 28 },
+
+    { "requestId": "FC-15", "releaseTick": 5, "sourcePoint": "IN1", "targetPoint": "W5", "businessType": "warehouse_fill", "priority": 6, "deadline": 18 },
+    { "requestId": "FC-16", "releaseTick": 5, "sourcePoint": "S4", "targetPoint": "A1", "businessType": "critical_feed", "priority": 8, "deadline": 14 },
+    { "requestId": "FC-17", "releaseTick": 5, "sourcePoint": "S5", "targetPoint": "B4", "businessType": "line_feed", "priority": 5, "deadline": 18 },
+
+    { "requestId": "FC-18", "releaseTick": 6, "sourcePoint": "W2", "targetPoint": "A4", "businessType": "cross_zone_hot", "priority": 8, "deadline": 16 },
+    { "requestId": "FC-19", "releaseTick": 6, "sourcePoint": "S1", "targetPoint": "A3", "businessType": "critical_feed", "priority": 9, "deadline": 15 },
+    { "requestId": "FC-20", "releaseTick": 6, "sourcePoint": "X2", "targetPoint": "W4", "businessType": "bypass_supply", "priority": 5, "deadline": 19 },
+
+    { "requestId": "FC-21", "releaseTick": 7, "sourcePoint": "S3", "targetPoint": "B1", "businessType": "line_feed", "priority": 6, "deadline": 18 },
+    { "requestId": "FC-22", "releaseTick": 7, "sourcePoint": "S8", "targetPoint": "W3", "businessType": "warehouse_fill", "priority": 4, "deadline": 20 },
+
+    { "requestId": "FC-23", "releaseTick": 8, "sourcePoint": "IN3", "targetPoint": "A2", "businessType": "critical_feed", "priority": 8, "deadline": 17 },
+    { "requestId": "FC-24", "releaseTick": 8, "sourcePoint": "A4", "targetPoint": "CH1", "businessType": "return_cycle", "priority": 3, "deadline": 26 },
+
+    { "requestId": "FC-25", "releaseTick": 9, "sourcePoint": "S6", "targetPoint": "W5", "businessType": "warehouse_fill", "priority": 5, "deadline": 21 },
+    { "requestId": "FC-26", "releaseTick": 9, "sourcePoint": "S4", "targetPoint": "A4", "businessType": "critical_feed", "priority": 9, "deadline": 18 }
+  ],
+  "faultProbability": 0.0,
+  "chargingProbability": 0.0,
+  "lowBatteryThreshold": 18,
+  "chargeRecoveryPerTick": 10,
+  "batteryDrainPerTick": 4,
+  "maxTicks": 0,
+  "admission": {
+    "maxActiveTasks": 2,
+    "maxRouteLoad": 1.4,
+    "maxZoneLoad": 1.6,
+    "taskTimeoutTicks": 20,
+    "stallThresholdTicks": 7
+  },
+  "weights": {
+    "alpha": 0.68,
+    "beta": 0.32,
+    "w1": 0.30,
+    "w2": 0.22,
+    "w3": 0.18,
+    "w4": 0.24,
+    "w5": 0.06
+  }
+}

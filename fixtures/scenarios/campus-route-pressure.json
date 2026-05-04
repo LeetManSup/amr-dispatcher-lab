@@ -1,0 +1,71 @@
+{
+  "name": "Campus Route Pressure",
+  "description": "Traffic-constrained benchmark on the Factory Campus map. Robot supply is intentionally generous, while route and zone thresholds are tight so the dominant bottlenecks become choke segments and hot target zones rather than fleet scarcity.",
+  "robots": [
+    { "robotId": "R1", "robotModel": "AMR-Pro", "startPoint": "IN1", "batteryLevel": 100 },
+    { "robotId": "R2", "robotModel": "AMR-Pro", "startPoint": "IN2", "batteryLevel": 100 },
+    { "robotId": "R3", "robotModel": "AMR-Pro", "startPoint": "IN3", "batteryLevel": 100 },
+    { "robotId": "R4", "robotModel": "AMR-Pro", "startPoint": "S2", "batteryLevel": 100 },
+    { "robotId": "R5", "robotModel": "AMR-Pro", "startPoint": "S4", "batteryLevel": 100 },
+    { "robotId": "R6", "robotModel": "AMR-Pro", "startPoint": "S6", "batteryLevel": 100 },
+    { "robotId": "R7", "robotModel": "AMR-Lite", "startPoint": "W1", "batteryLevel": 100 },
+    { "robotId": "R8", "robotModel": "AMR-Lite", "startPoint": "W2", "batteryLevel": 100 },
+    { "robotId": "R9", "robotModel": "AMR-Lite", "startPoint": "X2", "batteryLevel": 100 },
+    { "robotId": "R10", "robotModel": "AMR-Lite", "startPoint": "CH2", "batteryLevel": 100 }
+  ],
+  "requests": [
+    { "requestId": "CRP-01", "releaseTick": 0, "sourcePoint": "IN1", "targetPoint": "W4", "businessType": "cross_zone_hot", "priority": 8, "deadline": 14 },
+    { "requestId": "CRP-02", "releaseTick": 0, "sourcePoint": "IN2", "targetPoint": "W5", "businessType": "cross_zone_hot", "priority": 9, "deadline": 15 },
+    { "requestId": "CRP-03", "releaseTick": 0, "sourcePoint": "A1", "targetPoint": "W4", "businessType": "warehouse_hot", "priority": 7, "deadline": 15 },
+    { "requestId": "CRP-04", "releaseTick": 0, "sourcePoint": "B1", "targetPoint": "W5", "businessType": "warehouse_hot", "priority": 7, "deadline": 15 },
+    { "requestId": "CRP-05", "releaseTick": 0, "sourcePoint": "W1", "targetPoint": "A4", "businessType": "prod_a_hot", "priority": 10, "deadline": 12 },
+    { "requestId": "CRP-06", "releaseTick": 0, "sourcePoint": "W2", "targetPoint": "A3", "businessType": "prod_a_hot", "priority": 10, "deadline": 12 },
+
+    { "requestId": "CRP-07", "releaseTick": 1, "sourcePoint": "IN3", "targetPoint": "W4", "businessType": "cross_zone_hot", "priority": 8, "deadline": 15 },
+    { "requestId": "CRP-08", "releaseTick": 1, "sourcePoint": "S3", "targetPoint": "W5", "businessType": "cross_zone_hot", "priority": 8, "deadline": 16 },
+    { "requestId": "CRP-09", "releaseTick": 1, "sourcePoint": "W3", "targetPoint": "A4", "businessType": "prod_a_hot", "priority": 9, "deadline": 13 },
+    { "requestId": "CRP-10", "releaseTick": 1, "sourcePoint": "W4", "targetPoint": "A3", "businessType": "prod_a_hot", "priority": 9, "deadline": 13 },
+
+    { "requestId": "CRP-11", "releaseTick": 2, "sourcePoint": "S2", "targetPoint": "W4", "businessType": "cross_zone_hot", "priority": 7, "deadline": 16 },
+    { "requestId": "CRP-12", "releaseTick": 2, "sourcePoint": "S4", "targetPoint": "W5", "businessType": "cross_zone_hot", "priority": 7, "deadline": 16 },
+    { "requestId": "CRP-13", "releaseTick": 2, "sourcePoint": "W5", "targetPoint": "A4", "businessType": "prod_a_hot", "priority": 10, "deadline": 14 },
+    { "requestId": "CRP-14", "releaseTick": 2, "sourcePoint": "W1", "targetPoint": "A3", "businessType": "prod_a_hot", "priority": 9, "deadline": 14 },
+
+    { "requestId": "CRP-15", "releaseTick": 3, "sourcePoint": "A2", "targetPoint": "W4", "businessType": "warehouse_hot", "priority": 8, "deadline": 17 },
+    { "requestId": "CRP-16", "releaseTick": 3, "sourcePoint": "B2", "targetPoint": "W5", "businessType": "warehouse_hot", "priority": 8, "deadline": 17 },
+    { "requestId": "CRP-17", "releaseTick": 3, "sourcePoint": "W2", "targetPoint": "A4", "businessType": "prod_a_hot", "priority": 10, "deadline": 15 },
+    { "requestId": "CRP-18", "releaseTick": 3, "sourcePoint": "W4", "targetPoint": "A3", "businessType": "prod_a_hot", "priority": 9, "deadline": 15 },
+
+    { "requestId": "CRP-19", "releaseTick": 4, "sourcePoint": "IN1", "targetPoint": "W5", "businessType": "cross_zone_hot", "priority": 7, "deadline": 18 },
+    { "requestId": "CRP-20", "releaseTick": 4, "sourcePoint": "S5", "targetPoint": "W4", "businessType": "cross_zone_hot", "priority": 7, "deadline": 18 },
+    { "requestId": "CRP-21", "releaseTick": 4, "sourcePoint": "W3", "targetPoint": "A4", "businessType": "prod_a_hot", "priority": 10, "deadline": 16 },
+    { "requestId": "CRP-22", "releaseTick": 4, "sourcePoint": "W5", "targetPoint": "A3", "businessType": "prod_a_hot", "priority": 9, "deadline": 16 },
+
+    { "requestId": "CRP-23", "releaseTick": 5, "sourcePoint": "S1", "targetPoint": "W4", "businessType": "cross_zone_hot", "priority": 7, "deadline": 19 },
+    { "requestId": "CRP-24", "releaseTick": 5, "sourcePoint": "A3", "targetPoint": "W5", "businessType": "warehouse_hot", "priority": 8, "deadline": 19 },
+    { "requestId": "CRP-25", "releaseTick": 5, "sourcePoint": "W1", "targetPoint": "A4", "businessType": "prod_a_hot", "priority": 9, "deadline": 17 },
+    { "requestId": "CRP-26", "releaseTick": 5, "sourcePoint": "W2", "targetPoint": "A3", "businessType": "prod_a_hot", "priority": 9, "deadline": 17 }
+  ],
+  "faultProbability": 0.0,
+  "chargingProbability": 0.0,
+  "lowBatteryThreshold": 18,
+  "chargeRecoveryPerTick": 10,
+  "batteryDrainPerTick": 4,
+  "maxTicks": 0,
+  "admission": {
+    "maxActiveTasks": 8,
+    "maxRouteLoad": 0.45,
+    "maxZoneLoad": 1.1,
+    "taskTimeoutTicks": 28,
+    "stallThresholdTicks": 9
+  },
+  "weights": {
+    "alpha": 0.68,
+    "beta": 0.32,
+    "w1": 0.28,
+    "w2": 0.22,
+    "w3": 0.22,
+    "w4": 0.22,
+    "w5": 0.06
+  }
+}

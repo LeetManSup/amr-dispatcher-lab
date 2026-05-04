@@ -1,0 +1,19 @@
+{
+  "name": "Factory Small",
+  "points": [
+    { "pointId": "P1", "pointType": "running_area", "x": 60, "y": 80, "areaId": "A" },
+    { "pointId": "P2", "pointType": "queue_area", "x": 180, "y": 80, "areaId": "A" },
+    { "pointId": "P3", "pointType": "workbench", "x": 300, "y": 80, "areaId": "B" },
+    { "pointId": "P4", "pointType": "shelf_area", "x": 420, "y": 80, "areaId": "B" },
+    { "pointId": "P5", "pointType": "charging_area", "x": 180, "y": 210, "areaId": "C" },
+    { "pointId": "P6", "pointType": "maintenance_area", "x": 300, "y": 210, "areaId": "C" }
+  ],
+  "segments": [
+    { "segmentId": "S1", "fromPoint": "P1", "toPoint": "P2", "length": 10, "direction": "bidirectional", "speedLimit": 1.2, "routeCostWeight": 1.0, "segmentType": "main" },
+    { "segmentId": "S2", "fromPoint": "P2", "toPoint": "P3", "length": 10, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.0, "segmentType": "main" },
+    { "segmentId": "S3", "fromPoint": "P3", "toPoint": "P4", "length": 10, "direction": "bidirectional", "speedLimit": 0.8, "routeCostWeight": 1.2, "segmentType": "narrow" },
+    { "segmentId": "S4", "fromPoint": "P2", "toPoint": "P5", "length": 8, "direction": "bidirectional", "speedLimit": 1.1, "routeCostWeight": 1.0, "segmentType": "service" },
+    { "segmentId": "S5", "fromPoint": "P5", "toPoint": "P6", "length": 8, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.0, "segmentType": "service" },
+    { "segmentId": "S6", "fromPoint": "P6", "toPoint": "P3", "length": 8, "direction": "bidirectional", "speedLimit": 1.0, "routeCostWeight": 1.1, "segmentType": "service" }
+  ]
+}

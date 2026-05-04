@@ -1,0 +1,37 @@
+{
+  "name": "Baseline",
+  "description": "Сбалансированный сценарий для baseline-сравнения алгоритмов.",
+  "robots": [
+    { "robotId": "R1", "robotModel": "AMR-Lite", "startPoint": "P1", "batteryLevel": 100 },
+    { "robotId": "R2", "robotModel": "AMR-Lite", "startPoint": "P5", "batteryLevel": 95 },
+    { "robotId": "R3", "robotModel": "AMR-Pro", "startPoint": "P3", "batteryLevel": 100 }
+  ],
+  "requests": [
+    { "requestId": "REQ-1", "releaseTick": 0, "sourcePoint": "P1", "targetPoint": "P4", "businessType": "inbound", "priority": 5, "deadline": 8 },
+    { "requestId": "REQ-2", "releaseTick": 1, "sourcePoint": "P2", "targetPoint": "P6", "businessType": "line_feed", "priority": 8, "deadline": 7 },
+    { "requestId": "REQ-3", "releaseTick": 3, "sourcePoint": "P5", "targetPoint": "P3", "businessType": "charging_swap", "priority": 3, "deadline": 12 },
+    { "requestId": "REQ-4", "releaseTick": 4, "sourcePoint": "P3", "targetPoint": "P1", "businessType": "return", "priority": 6, "deadline": 10 }
+  ],
+  "faultProbability": 0.02,
+  "chargingProbability": 0.01,
+  "lowBatteryThreshold": 25,
+  "chargeRecoveryPerTick": 12,
+  "batteryDrainPerTick": 4,
+  "maxTicks": 20,
+  "admission": {
+    "maxActiveTasks": 2,
+    "maxRouteLoad": 2,
+    "maxZoneLoad": 2,
+    "taskTimeoutTicks": 12,
+    "stallThresholdTicks": 4
+  },
+  "weights": {
+    "alpha": 0.65,
+    "beta": 0.35,
+    "w1": 0.35,
+    "w2": 0.35,
+    "w3": 0.15,
+    "w4": 0.1,
+    "w5": 0.05
+  }
+}
